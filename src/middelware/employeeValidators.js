@@ -46,6 +46,15 @@ const employeeRegisterValidator = [
     .withMessage("Salary is required")
     .isFloat({ min: 0 })
     .withMessage("Salary must be a valid number"),
+    body("password").notEmpty().withMessage("password is required")
 ];
 
-module.exports = { employeeRegisterValidator };
+// const userValidator = [
+//   body("phone").notEmpty().withMessage("Phone is required"),
+//   body("password").notEmpty().withMessage("Password is required")
+// ]
+const userValidator = [
+  body("phone").notEmpty().withMessage("Phone is required"),
+  body("password").notEmpty().withMessage("Password is required")
+];
+module.exports = { employeeRegisterValidator,userValidator };

@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 require('dotenv').config();
-const connectSqlDB = async ()=>{
+
+// const connectSqlDB = async ()=>{
 const connectionSqlDB = mysql.createConnection({
     port:process.env.DB_PORT,
     host:process.env.DB_HOST,
@@ -23,7 +24,30 @@ connectionSqlDB.connect((err)=>{
         
     }
 })
-}
+//  return connectionSqlDB;
+// }
 
 
-module.exports = connectSqlDB;
+module.exports = connectionSqlDB;
+
+
+// const mysql = require('mysql');
+// require('dotenv').config();
+
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USERNAME,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME,
+//   port: process.env.DB_PORT
+// });
+
+// connection.connect((err) => {
+//   if (err) {
+//     console.error("❌ DB connection error", err);
+//   } else {
+//     console.log(`✅ Connected to DB ${process.env.DB_NAME}`);
+//   }
+// });
+
+// module.exports = connection; // export the connection object

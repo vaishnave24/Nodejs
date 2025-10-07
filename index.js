@@ -1,8 +1,7 @@
 const connectDB = require("./src/db/mongoDbConnection");
 require("dotenv").config();
-const app = require("./app")
-const connection = require('./src/db/sqlConnection') // sqlconnection
-
+const app = require("./app");
+const connection = require("./src/db/sqlConnection");
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8080);
@@ -12,4 +11,4 @@ connectDB()
     console.log("Mongo Db connection failed", err);
   });
 
-  connection();// sqlconnection
+  // connection();// sqlconnection
